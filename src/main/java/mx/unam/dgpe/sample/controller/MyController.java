@@ -25,7 +25,7 @@ public class MyController extends AbstractVerticle {
         router.route().handler(BodyHandler.create().setUploadsDirectory("upload-folder"));
         router.get("/api/primero").handler(this::primero);
         router.post("/api/segundo").handler(this::segundo);
-	router.get("api/suma").handler(thhis::suma);
+	router.get("/api/calculando").handler(thhis::calculando);
         
         // Create the HTTP server and pass the "accept" method to the request handler.
         vertx.createHttpServer().requestHandler(router::accept).listen(
@@ -71,5 +71,48 @@ public class MyController extends AbstractVerticle {
         info.put("autos", autos);
         return Json.encodePrettily(info);
     }
+  private void calculando(RoutingContext routingContext) {
+        HttpServerResponse response = routingContext.response();
+        HttpServerRequest request = routingContext.request();
+       
+	String operandoA = request.getParam("a");
+        String jsonResponse = factorial(operandoA);
+        response.setStatusCode(200).
+        putHeader("content-type", "application/json; charset=utf-8").
+        end(jsonResponse);
+}
+	private String factorial(String operandoA) {
+
+		Integer r = 1;
+		Integer a=0;
+		
+		Integer total=0;
+		Integer contador=0;
+		Integer numero = a.parseInteger(operandoA);
+		
+		if(numero==0){
+		 r=1;	
+		}else{
+			total=1;
+			contador=numero;
+			while(contador==0){
+				total=total*contador;
+				contador=contador-1;
+			}
+			r=total;
+			
+		}
+		String cantidad="";
+		cantidad=cantidad.parseString(r);
+		Integer longitud=cantidad.length();
+		
+			
+	
+        Map<String, String> resultado = new HashMap<>();
+        
+    	resultado.put("resultado", ""+longitud);
+    	
+        return Json.encodePrettily(resultado);
+}
 
 }
