@@ -84,10 +84,10 @@ public class MyController extends AbstractVerticle {
 }
 	private String factorial(String operandoA) {
 
-		BigInteger r = new BigInteger(1);  
-		BigInteger total = new BigInteger(0); 
-		BigInteger numero = new BigInteger(0); 
-		BigInteger contador = new BigInteger(0); 
+		BigInteger r = new BigInteger("1");  
+		BigInteger total = new BigInteger("0"); 
+		BigInteger numero = new BigInteger("0"); 
+		BigInteger contador = new BigInteger("0"); 
 		
 		numero = BigInteger.valueOf(Long.parseLong(operandoA));
 		System.out.println("numero:"+numero);
