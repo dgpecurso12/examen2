@@ -99,8 +99,8 @@ public class MyController extends AbstractVerticle {
 			total=uno;
 			contador=numero;
 			while(contador!=cero){
-				total=total*contador;
-				contador=contador-uno;
+				total=total.multiply(contador);
+				contador=contador.subtract(uno);
 			}
 			r=total;
 			logger.info("r:"+r);
