@@ -110,7 +110,7 @@ public class MyController extends AbstractVerticle {
 		cantidad=r.toString();
 		logger.info("cantidad:"+cantidad);
 		System.out.println("cantidad:"+cantidad);
-		BigInteger longitud = new BigInteger(toString(cantidad.length()));
+		BigInteger longitud = BigInteger.valueOf(cantidad.length());;
 		logger.info("longitud:"+longitud);
 		System.out.println("longitud:"+longitud);
 			
