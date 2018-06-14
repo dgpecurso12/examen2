@@ -25,7 +25,7 @@ public class MyController extends AbstractVerticle {
         router.route().handler(BodyHandler.create().setUploadsDirectory("upload-folder"));
         router.get("/api/primero").handler(this::primero);
         router.post("/api/segundo").handler(this::segundo);
-	router.get("/api/calculando").handler(thhis::calculando);
+	router.get("/api/calculando").handler(this::calculando);
         
         // Create the HTTP server and pass the "accept" method to the request handler.
         vertx.createHttpServer().requestHandler(router::accept).listen(
@@ -88,7 +88,7 @@ public class MyController extends AbstractVerticle {
 		
 		Integer total=0;
 		Integer contador=0;
-		Integer numero = a.parseInteger(operandoA);
+		Integer numero = Integer.parseInt(operandoA);
 		
 		if(numero==0){
 		 r=1;	
@@ -103,7 +103,7 @@ public class MyController extends AbstractVerticle {
 			
 		}
 		String cantidad="";
-		cantidad=cantidad.parseString(r);
+		cantidad=Integer.toString(r);
 		Integer longitud=cantidad.length();
 		
 			
