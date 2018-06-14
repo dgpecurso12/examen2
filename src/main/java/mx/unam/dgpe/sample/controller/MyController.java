@@ -84,9 +84,9 @@ public class MyController extends AbstractVerticle {
 }
 	private String factorial(String operandoA) {
 		Integer numero=Integer.parseInt(operandoA);
-		BigInteger resultado= bigFactorial(numero);
+		BigInteger resultado1= bigFactorial(numero);
 		
-		String cantidad=resultado.toString();
+		String cantidad=resultado1.toString();
 		logger.info("cantidad:"+cantidad);
 		System.out.println("cantidad:"+cantidad);
 		BigInteger longitud = new BigInteger(""+cantidad.length());
