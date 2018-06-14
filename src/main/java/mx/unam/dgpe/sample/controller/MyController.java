@@ -13,6 +13,7 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
+    import java.math.BigInteger;
 
 public class MyController extends AbstractVerticle {
     private static final Logger logger = Logger.getLogger(MyController.class);
@@ -83,12 +84,12 @@ public class MyController extends AbstractVerticle {
 }
 	private String factorial(String operandoA) {
 
-		Integer r = 1;
-		Integer a=0;
+		BigInteger r = new BigInteger(1);  
+		BigInteger total = new BigInteger(0); 
+		BigInteger numero = new BigInteger(0); 
+		BigInteger contador = new BigInteger(0); 
 		
-		Integer total=0;
-		Integer contador=0;
-		Integer numero = Integer.parseInt(operandoA);
+		numero = BigInteger.valueOf(Long.parseLong(operandoA));
 		System.out.println("numero:"+numero);
 		logger.info("numero:"+numero);
 		if(numero==0){
@@ -105,10 +106,10 @@ public class MyController extends AbstractVerticle {
 			System.out.println("r:"+r);
 		}
 		String cantidad="";
-		cantidad=Integer.toString(r);
+		cantidad=r.toString();
 		logger.info("cantidad:"+cantidad);
 		System.out.println("cantidad:"+cantidad);
-		Integer longitud=cantidad.length();
+		BigInteger longitud = cantidad.length();
 		logger.info("longitud:"+longitud);
 		System.out.println("longitud:"+longitud);
 			
