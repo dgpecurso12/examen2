@@ -83,8 +83,8 @@ public class MyController extends AbstractVerticle {
         end(jsonResponse);
 }
 	private String factorial(String operandoA) {
-		Integer numero=Integer.parseInteger(operandoA);
-		BigInteger resultado= bigFactorial();
+		Integer numero=Integer.parseInt(operandoA);
+		BigInteger resultado= bigFactorial(numero);
 		
 		String cantidad=resultado.toString();
 		logger.info("cantidad:"+cantidad);
