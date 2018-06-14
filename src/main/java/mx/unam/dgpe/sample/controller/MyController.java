@@ -83,7 +83,8 @@ public class MyController extends AbstractVerticle {
         end(jsonResponse);
 }
 	private String factorial(String operandoA) {
-
+		BigInteger cero = new BigInteger("0"); 
+		BigInteger uno = new BigInteger("1"); 
 		BigInteger r = new BigInteger("1");  
 		BigInteger total = new BigInteger("0"); 
 		BigInteger numero = new BigInteger("0"); 
@@ -92,14 +93,14 @@ public class MyController extends AbstractVerticle {
 		numero = BigInteger.valueOf(Long.parseLong(operandoA));
 		System.out.println("numero:"+numero);
 		logger.info("numero:"+numero);
-		if(numero==0){
-		 	r=1;	
+		if(numero==cero){
+		 	r=uno;	
 		}else{
-			total=1;
+			total=uno;
 			contador=numero;
 			while(contador!=0){
 				total=total*contador;
-				contador=contador-1;
+				contador=contador-uno;
 			}
 			r=total;
 			logger.info("r:"+r);
