@@ -98,7 +98,7 @@ public class MyController extends AbstractVerticle {
 		}else{
 			total=uno;
 			contador=numero;
-			while(contador!=0){
+			while(contador!=cero){
 				total=total*contador;
 				contador=contador-uno;
 			}
@@ -110,7 +110,7 @@ public class MyController extends AbstractVerticle {
 		cantidad=r.toString();
 		logger.info("cantidad:"+cantidad);
 		System.out.println("cantidad:"+cantidad);
-		BigInteger longitud = cantidad.length();
+		BigInteger longitud = new BigInteger(cantidad.length());
 		logger.info("longitud:"+longitud);
 		System.out.println("longitud:"+longitud);
 			
