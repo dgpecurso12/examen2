@@ -92,11 +92,11 @@ public class MyController extends AbstractVerticle {
 		System.out.println("numero:"+numero);
 		logger.info("numero:"+numero);
 		if(numero==0){
-		 r=1;	
+		 	r=1;	
 		}else{
 			total=1;
 			contador=numero;
-			while(contador==0){
+			while(contador!=0){
 				total=total*contador;
 				contador=contador-1;
 			}
