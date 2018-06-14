@@ -89,7 +89,7 @@ public class MyController extends AbstractVerticle {
 		Integer total=0;
 		Integer contador=0;
 		Integer numero = Integer.parseInt(operandoA);
-		
+		logger.info("numero:"+numero);
 		if(numero==0){
 		 r=1;	
 		}else{
@@ -100,12 +100,13 @@ public class MyController extends AbstractVerticle {
 				contador=contador-1;
 			}
 			r=total;
-			
+			logger.info("r:"+r);
 		}
 		String cantidad="";
 		cantidad=Integer.toString(r);
+		logger.info("cantidad:"+cantidad);
 		Integer longitud=cantidad.length();
-		
+		logger.info("longitud:"+longitud);
 			
 	
         Map<String, String> resultado = new HashMap<>();
