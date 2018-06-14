@@ -83,34 +83,13 @@ public class MyController extends AbstractVerticle {
         end(jsonResponse);
 }
 	private String factorial(String operandoA) {
-		BigInteger cero = new BigInteger("0"); 
-		BigInteger uno = new BigInteger("1"); 
-		BigInteger r = new BigInteger("1");  
-		BigInteger total = new BigInteger("0"); 
-		BigInteger numero = new BigInteger("0"); 
-		BigInteger contador = new BigInteger("0"); 
+		Integer numero=Integer.parseInteger(operandoA);
+		BigInteger resultado= bigFactorial();
 		
-		numero = BigInteger.valueOf(Long.parseLong(operandoA));
-		System.out.println("numero:"+numero);
-		logger.info("numero:"+numero);
-		if(numero==cero){
-		 	r=uno;	
-		}else{
-			total=uno;
-			contador=numero;
-			while(contador!=cero){
-				total=total.multiply(contador);
-				contador=contador.subtract(uno);
-			}
-			r=total;
-			logger.info("r:"+r);
-			System.out.println("r:"+r);
-		}
-		String cantidad="";
-		cantidad=r.toString();
+		String cantidad=resultado.toString();
 		logger.info("cantidad:"+cantidad);
 		System.out.println("cantidad:"+cantidad);
-		BigInteger longitud = BigInteger.valueOf(cantidad.length());;
+		BigInteger longitud = BigInteger.valueOf(cantidad.size());
 		logger.info("longitud:"+longitud);
 		System.out.println("longitud:"+longitud);
 			
@@ -120,6 +99,22 @@ public class MyController extends AbstractVerticle {
     	resultado.put("resultado", ""+longitud);
     	
         return Json.encodePrettily(resultado);
+}
+	public static BigInteger bigFactorial(int n)
+{
+    // Empezamos la base del factorial
+    BigInteger fac = new BigInteger("1");
+
+    // Obtenemos el factorial solo si el numero es mayor o igual a 2
+    if(n >= 2){
+        // Proceso para obtener el factorial
+        for(int i = 1; i <= n; i++){
+            // Multiplicamos los numeros
+            fac = fac.multiply(new BigInteger(i + ""));
+        }
+    }
+
+    return fac;
 }
 
 }
