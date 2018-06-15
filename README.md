@@ -8,3 +8,6 @@ Para verificar que corra
 
 docker run -it -p 8081:8080 -v /home/gustavo/curso/examen2/:/codigo gustavoarellano/jdk18 java -jar /codigo/target/sample-1.0-SNAPSHOT-fat.jar
 
+
+para ejecutar el docker es con
+docker run -d p 8081:8080 dgpecurso12/examen12
