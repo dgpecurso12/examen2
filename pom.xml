@@ -38,6 +38,25 @@
             <version>4.5.2</version>
         </dependency>
     </dependencies>
+<repositories>
+        <repository>
+            <id>nexus.kebblar.io-repo</id>
+            <url>http://192.168.1.145:8081/repository/all/</url>
+            <name>Kebblar Repository</name>
+        </repository>
+    </repositories>
+<distributionManagement>
+                <repository>
+                        <id>nexus.kebblar.io-repo</id>
+                        <url>http://192.168.1.145:8081/repository/maven-releases/</url>
+                        <uniqueVersion>true</uniqueVersion>
+                </repository>
+                <snapshotRepository>
+                        <id>nexus.kebblar.io-repo</id>
+                        <url>http://192.168.1.145:8081/repository/maven-snapshots/</url>
+                        <uniqueVersion>true</uniqueVersion>
+                </snapshotRepository>
+        </distributionManagement>
 
     <build>
         <plugins>
